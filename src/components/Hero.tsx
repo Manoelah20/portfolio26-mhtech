@@ -89,7 +89,7 @@ export default function Hero() {
             
             <div className="flex items-center gap-2">
               <span className="text-cyan-400">📧</span>
-              <span>manoela.n20@gmail.com</span>
+              <span>harrisonmanoela@gmail.com</span>
             </div>
           </div>
           
