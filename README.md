@@ -1,174 +1,85 @@
-# Portfolio - Manoela Harrison
-
-## 🚀 Deploy Online
-
-**Site publicado em:** Portfolio - Manoela Harrison
+Portfolio - Manoela Harrison
 🚀 Deploy Online
-Site publicado em: [https://portfolio26-mhtech.vercel.app]
+
+Site publicado em: https://portfolio26-mhtech.vercel.app
 
 📋 Sobre o Projeto
 Portfólio profissional desenvolvido em HTML/CSS puro para apresentação de habilidades e experiência como Desenvolvedora Front-End. O design é focado em clareza, profissionalismo e otimizado para impressão.
 
 ✨ Características
-Design Responsivo: Adaptável para diferentes dispositivos
-Otimizado para Impressão: Formatação especial para PDF
-Performance Alta: Carregamento rápido com CSS embutido
-Acessibilidade: Estrutura semântica HTML5
-SEO Amigável: Meta tags e organização de conteúdo
+Design Responsivo: Adaptável para diferentes dispositivos.
+
+Otimizado para Impressão: Formatação especial para geração de PDF.
+
+Performance Alta: Carregamento rápido com CSS enxuto.
+
+Acessibilidade: Estrutura semântica HTML5 (WCAG).
+
+SEO Amigável: Meta tags e organização de conteúdo para buscadores.
+
 🛠️ Tecnologias
-HTML5 - Estrutura semântica
-CSS3 - Estilização com variáveis CSS
-Media Queries - Design responsivo e impressão
-Flexbox/Grid - Layout moderno
+HTML5 - Estrutura semântica.
+
+CSS3 - Estilização com variáveis e design moderno.
+
+Media Queries - Responsividade e suporte a print.
+
+Flexbox/Grid - Layouts fluidos.
+
 📁 Estrutura do Projeto
+Plaintext
 portfolio/
-├── index.html          # Página principal do portfólio
-├── vercel.json        # Configuração de deploy Vercel
-├── README.md          # Documentação do projeto
-└── assets/            # (futuro) imagens e recursos
-🎨 Seções do Portfólio
-Cabeçalho - Informações de contato
-Perfil Profissional - Resumo da carreira
-Habilidades Técnicas - Core Stack e competências
-Projetos em Destaque - Portfólio de projetos
-Educação - Formação acadêmica
-Experiência Profissional - Histórico de trabalho
+├── index.html          # Página principal
+├── vercel.json         # Configuração Vercel
+├── README.md           # Documentação
+└── assets/             # Imagens e recursos
+🎨 Seções
+Cabeçalho: Contatos e links.
+
+Perfil: Resumo da carreira e transição para tech.
+
+Habilidades: Core stack (React, JS, TS).
+
+Projetos: Destaques do portfólio.
+
+Educação & Experiência: Histórico acadêmico e profissional.
+
 🚀 Deploy
-Vercel (Atual)
-Configurado com vercel.json para sites estáticos
-Deploy automático a cada push
-URL: https://portf-lio2026.vercel.app
-Alternativas de Deploy
-Netlify: Arrastar e soltar arquivo HTML
-GitHub Pages: Ativar Pages no repositório
-Render: Static Site hosting
+Vercel (Atual): * Configurado via vercel.json.
+
+URL: https://portfolio26-mhtech.vercel.app
+
 📱 Como Usar
 Clone o repositório:
+
+Bash
 git clone https://github.com/Manoelah20/portfolio26-mhtech.git
+Acesse e execute:
 
-Abra o arquivo:
-
-# Navegue para a pasta
+Bash
+# Entre na pasta correta
 cd portfolio26-mhtech
 
-# Abra no navegador
-# Ou use um servidor local:
-python -m http.server 8000
-# ou
+# Abra o index.html no navegador ou use um servidor local:
 npx serve .
 Personalize:
 
-Edite index.html com suas informações
-Modifique cores CSS nas variáveis :root
-Adicione/remova projetos conforme necessário
-🎯 Objetivo
-Portfólio desenvolvido para aplicações em vagas de:
+Edite o index.html com seus dados.
 
-Desenvolvedora Front-End Júnior/Pleno
-React Developer
-TypeScript Developer
-Next.js Developer
+Ajuste as cores no :root do CSS.
+
+🎯 Objetivo
+Focado em oportunidades como:
+
+Desenvolvedora Front-End Júnior
+
+React / TypeScript Developer
+
 📞 Contato
 Email: harrisonmanoela@gmail.com
+
 LinkedIn: linkedin.com/in/manoelaharrison
+
 GitHub: github.com/Manoelah20
-📄 Licença
-Este projeto está disponível para uso e modificação sob licença MIT.
 
 Desenvolvido com ❤️ por Manoela Harrison
-
-## 📋 Sobre o Projeto
-
-Portfólio profissional desenvolvido em HTML/CSS puro para apresentação de habilidades e experiência como Desenvolvedora Front-End. O design é focado em clareza, profissionalismo e otimizado para impressão.
-
-## ✨ Características
-
-- **Design Responsivo**: Adaptável para diferentes dispositivos
-- **Otimizado para Impressão**: Formatação especial para PDF
-- **Performance Alta**: Carregamento rápido com CSS embutido
-- **Acessibilidade**: Estrutura semântica HTML5
-- **SEO Amigável**: Meta tags e organização de conteúdo
-
-## 🛠️ Tecnologias
-
-- **HTML5** - Estrutura semântica
-- **CSS3** - Estilização com variáveis CSS
-- **Media Queries** - Design responsivo e impressão
-- **Flexbox/Grid** - Layout moderno
-
-## 📁 Estrutura do Projeto
-
-```
-portfolio/
-├── index.html          # Página principal do portfólio
-├── vercel.json        # Configuração de deploy Vercel
-├── README.md          # Documentação do projeto
-└── assets/            # (futuro) imagens e recursos
-```
-
-## 🎨 Seções do Portfólio
-
-1. **Cabeçalho** - Informações de contato
-2. **Perfil Profissional** - Resumo da carreira
-3. **Habilidades Técnicas** - Core Stack e competências
-4. **Projetos em Destaque** - Portfólio de projetos
-5. **Educação** - Formação acadêmica
-6. **Experiência Profissional** - Histórico de trabalho
-
-## 🚀 Deploy
-
-### Vercel (Atual)
-- Configurado com `vercel.json` para sites estáticos
-- Deploy automático a cada push
-- URL: https://portfolio26-mhtech.vercel.app
-
-### Alternativas de Deploy
-- **Netlify**: Arrastar e soltar arquivo HTML
-- **GitHub Pages**: Ativar Pages no repositório
-- **Render**: Static Site hosting
-
-## 📱 Como Usar
-
-1. **Clone o repositório:**
-   ```bash
-  git clone https://github.com/Manoelah20/portfolio26-mhtech.git
-   ```
-
-2. **Abra o arquivo:**
-   ```bash
-   # Navegue para a pasta
-   cd Portf-lio2026
-   
-   # Abra no navegador
-   # Ou use um servidor local:
-   python -m http.server 8000
-   # ou
-   npx serve .
-   ```
-
-3. **Personalize:**
-   - Edite `index.html` com suas informações
-   - Modifique cores CSS nas variáveis `:root`
-   - Adicione/remova projetos conforme necessário
-
-## 🎯 Objetivo
-
-Portfólio desenvolvido para aplicações em vagas de:
-- Desenvolvedora Front-End Júnior/Pleno
-- React Developer
-- TypeScript Developer
-- Next.js Developer
-
-## 📞 Contato
-
-- **Email**: harrisonmanoela@gmail.com
-- **LinkedIn**: [linkedin.com/in/manoelaharrison](https://linkedin.com/in/manoelaharrison)
-- **GitHub**: [github.com/Manoelah20](https://github.com/Manoelah20)
-
-## 📄 Licença
-
-Este projeto está disponível para uso e modificação sob licença MIT.
-
----
-
-**Desenvolvido com ❤️ por Manoela Harrison**
