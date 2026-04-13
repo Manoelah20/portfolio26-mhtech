@@ -82,10 +82,42 @@ npm run build
 
 Os arquivos serão gerados na pasta `dist`.
 
-## 🚀 Deploy
+## 🚀 Deploy no Vercel Grátis
 
-O projeto pode ser deployado em plataformas como:
-- Vercel
+### Passo a Passo
+
+1. **Acesse o Vercel**
+   - Vá para [vercel.com](https://vercel.com)
+   - Faça login com sua conta GitHub
+
+2. **Conecte o Repositório**
+   - Clique em "Add New Project"
+   - Importe o repositório `portfolio-mh-26` do seu GitHub
+   - O Vercel detectará automaticamente que é um projeto Vite
+
+3. **Configure o Deploy**
+   - O `vercel.json` já está configurado, então não precisa alterar nada
+   - Clique em "Deploy"
+
+4. **Aguarde o Deploy**
+   - O Vercel irá instalar as dependências e fazer o build automaticamente
+   - Em alguns minutos seu site estará online
+
+5. **Domínio Gratuito**
+   - O Vercel fornecerá um domínio gratuito como: `seu-portfolio.vercel.app`
+   - Você pode personalizar o domínio nas configurações do projeto
+
+### Plano Gratuito do Vercel
+
+- ✅ Hospedagem ilimitada de sites estáticos
+- ✅ Deploy automático a cada commit
+- ✅ SSL/HTTPS gratuito
+- ✅ CDN global
+- ✅ Domínios personalizados
+- ✅ 100GB de largura de banda por mês
+
+### Outras Plataformas
+
 - Netlify
 - GitHub Pages
 - Qualquer serviço de hospedagem estática
@@ -100,4 +132,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 ---
 
-**Desenvolvido com ❤️ usando React e TypeScript**
+Desenvolvido com ❤️ usando React e TypeScript
