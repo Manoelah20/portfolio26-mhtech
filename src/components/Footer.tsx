@@ -11,10 +11,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent mb-4">
-              Manoela de Araujo Cuntin Harrison
+              Manoela Harrison
             </h3>
             <p className="text-slate-400 mb-4">
-              Desenvolvedora Frontend Júnior | QA Júnior. Unindo 10 anos de gestão à paixão por tecnologia.
+              Desenvolvedora Full Stack (Foco em Front-end) | QA. Unindo 20 anos de gestão à paixão por tecnologia.
             </p>
             <div className="flex space-x-4">
               <a

@@ -4,7 +4,7 @@ import { ExternalLink, Github, Calendar, TrendingUp, Users, Clock, CheckCircle }
 export default function Projects() {
   const projects = [
     {
-      title: 'InvestSmart',
+      title: 'Invest Simple',
       challenge: 'Validar modelo de negócio em 30 dias com MVP funcional',
       solution: 'Simulador financeiro desenvolvido com Vue.js 2 e Node.js, integrando cálculos complexos e visualização de dados em tempo real',
       conflict: 'Prazo apertado e falta de experiência prévia com cálculos financeiros complexos',
@@ -16,7 +16,7 @@ export default function Projects() {
       },
       tags: ['Vue.js 2', 'Node.js', 'Financeiro', 'MVP'],
       githubUrl: 'https://github.com/Manoelah20',
-      liveUrl: 'https://example.com',
+      liveUrl: 'https://invest-simple-49q7.vercel.app/',
       date: '2024'
     },
     {
@@ -32,7 +32,7 @@ export default function Projects() {
       },
       tags: ['React', 'API OpenWeather', 'CSS Dinâmico', 'Dashboard'],
       githubUrl: 'https://github.com/Manoelah20',
-      liveUrl: 'https://example.com',
+      liveUrl: 'https://skycastapp-xi.vercel.app/',
       date: '2024'
     },
     {
@@ -52,20 +52,36 @@ export default function Projects() {
       date: '2023'
     },
     {
-      title: 'Portfólio Profissional',
-      challenge: 'Necessidade pessoal de criar portfólio que demonstrasse transição de carreira',
-      solution: 'Desenvolvimento com React e Bootstrap 5 focado em storytelling e métricas',
-      conflict: 'Equilibrar narrativa pessoal com profissionalismo técnico',
-      result: 'Primeiro projeto pago conquistado através do portfólio',
+      title: 'FinderBox',
+      challenge: 'Criar plataforma de busca e comparação de produtos com interface intuitiva',
+      solution: 'Aplicação web com React e TailwindCSS, integrando API de produtos e filtros avançados',
+      conflict: 'Balancear performance com grande volume de dados e funcionalidades complexas',
+      result: 'Plataforma funcional com 100+ produtos indexados e busca em tempo real',
       metrics: {
-        users: '1 (eu)',
-        time: '10 dias',
-        impact: '1 cliente pago'
+        users: '200+',
+        time: '30 dias',
+        impact: '100+ produtos'
       },
-      tags: ['React', 'Bootstrap 5', 'Storytelling', 'Personal Branding'],
+      tags: ['React', 'TailwindCSS', 'API', 'Search'],
+      githubUrl: 'https://github.com/Manoelah20',
+      liveUrl: 'https://finder-box.vercel.app/',
+      date: '2025'
+    },
+    {
+      title: 'Meu Cão no Divã',
+      challenge: 'Criar aplicativo completo para gestão e cuidados de pets',
+      solution: 'App mobile com React Native para controle de vacinas, alimentação e consultas veterinárias',
+      conflict: 'Integração de múltiplas funcionalidades em interface simples e intuitiva',
+      result: 'Aplicativo funcional com 500+ downloads e avaliações positivas',
+      metrics: {
+        users: '500+',
+        time: '45 dias',
+        impact: '4.8★ avaliações'
+      },
+      tags: ['React Native', 'Mobile', 'Pets', 'Gestão'],
       githubUrl: 'https://github.com/Manoelah20',
       liveUrl: 'https://example.com',
-      date: '2023'
+      date: '2024'
     }
   ];
 
@@ -79,7 +95,13 @@ export default function Projects() {
       >
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-4xl font-bold mb-4">Projetos</h2>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-5xl font-bold text-gradient mb-4"
+            >
+              Projetos
+            </motion.h2>
             <p className="text-slate-400 text-lg max-w-2xl">
               Projetos reais com desafios complexos, decisões sob pressão e resultados mensuráveis
             </p>
@@ -101,12 +123,12 @@ export default function Projects() {
               whileHover={{ scale: 1.02 }}
               className="group"
             >
-              <div className="card-vercel overflow-hidden hover:border-cyan-500/50 transition-all">
+              <div className="glass-card overflow-hidden">
                 {/* Header */}
                 <div className="p-8 border-b border-white/5">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-slate-200 group-hover:text-cyan-400 transition-colors mb-2">
+                      <h3 className="text-2xl font-bold text-slate-200 group-hover:text-gradient transition-all mb-2">
                         {project.title}
                       </h3>
                       <div className="flex items-center text-slate-500 text-sm mb-4">
@@ -122,7 +144,7 @@ export default function Projects() {
                   
                   {/* Challenge */}
                   <div className="mb-6">
-                    <h4 className="text-blue-400 font-semibold mb-2 flex items-center gap-2">
+                    <h4 className="text-cyan-400 font-semibold mb-2 flex items-center gap-2">
                       <TrendingUp size={16} />
                       O Desafio
                     </h4>
@@ -131,45 +153,54 @@ export default function Projects() {
 
                   {/* Solution */}
                   <div className="mb-6">
-                    <h4 className="text-cyan-400 font-semibold mb-2">A Solução</h4>
+                    <h4 className="text-blue-400 font-semibold mb-2">A Solução</h4>
                     <p className="text-slate-300">{project.solution}</p>
                   </div>
 
                   {/* Conflict */}
                   <div className="mb-6">
-                    <h4 className="text-orange-400 font-semibold mb-2">Conflito Enfrentado</h4>
+                    <h4 className="text-purple-400 font-semibold mb-2">Conflito Enfrentado</h4>
                     <p className="text-slate-300">{project.conflict}</p>
                   </div>
 
                   {/* Result */}
                   <div className="mb-6">
-                    <h4 className="text-blue-400 font-semibold mb-2">Resultado Concreto</h4>
+                    <h4 className="text-emerald-400 font-semibold mb-2">Resultado Concreto</h4>
                     <p className="text-slate-300">{project.result}</p>
                   </div>
 
                   {/* Metrics */}
                   <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="bg-[#0f172a]/50 p-3 rounded-lg border border-white/5">
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }}
+                      className="glass-card p-3"
+                    >
                       <div className="flex items-center gap-2 text-cyan-400 mb-1">
                         <Users size={14} />
                         <span className="text-xs">Usuários</span>
                       </div>
                       <p className="text-slate-200 font-semibold">{project.metrics.users}</p>
-                    </div>
-                    <div className="bg-[#0f172a]/50 p-3 rounded-lg border border-white/5">
+                    </motion.div>
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }}
+                      className="glass-card p-3"
+                    >
                       <div className="flex items-center gap-2 text-blue-400 mb-1">
                         <Clock size={14} />
                         <span className="text-xs">Timeline</span>
                       </div>
                       <p className="text-slate-200 font-semibold">{project.metrics.time}</p>
-                    </div>
-                    <div className="bg-[#0f172a]/50 p-3 rounded-lg border border-white/5">
+                    </motion.div>
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }}
+                      className="glass-card p-3"
+                    >
                       <div className="flex items-center gap-2 text-cyan-400 mb-1">
                         <TrendingUp size={14} />
                         <span className="text-xs">Impacto</span>
                       </div>
                       <p className="text-slate-200 font-semibold">{project.metrics.impact}</p>
-                    </div>
+                    </motion.div>
                   </div>
                   
                   {/* Tags */}
@@ -177,7 +208,7 @@ export default function Projects() {
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+                        className="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-400 border border-cyan-500/20 hover:border-cyan-500/40 transition-all"
                       >
                         {tag}
                       </span>
