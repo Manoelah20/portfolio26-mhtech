@@ -99,4 +99,25 @@
     letter-spacing: 0.05em;
     border: 1px solid rgba(16, 185, 129, 0.2);
   }
+
+  .spotlight-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spotlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(34, 211, 238, 0.15), transparent 150px);
+  }
+
+  .spotlight-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(59, 130, 246, 0.1), transparent 200px);
+  }
 }

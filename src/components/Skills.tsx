@@ -2,16 +2,16 @@ import { motion } from 'framer-motion';
 import { Database, Palette, Server, Smartphone, Globe, CheckCircle } from 'lucide-react';
 
 export default function Skills() {
-  const skillCategories = [
+const skillCategories = [
     {
       title: 'Frontend',
       icon: <Palette className="text-blue-400" size={24} />,
-      skills: ['JavaScript (ES6+)', 'React', 'Next.js', 'Angular', 'HTML5', 'CSS3', 'Bootstrap 5']
+      skills: ['JavaScript (ES6+)', 'TypeScript', 'React', 'Next.js', 'Angular', 'HTML5', 'CSS3', 'WCAG / A11Y']
     },
     {
       title: 'Mobile',
       icon: <Smartphone className="text-emerald-400" size={24} />,
-      skills: ['React Native', 'Expo']
+      skills: ['React Native', 'Expo', 'A11Y (Mobile)', 'React Navigation', 'TypeScript']
     },
     {
       title: 'Backend & Base',
@@ -21,7 +21,7 @@ export default function Skills() {
     {
       title: 'QA & Ferramentas',
       icon: <CheckCircle className="text-emerald-400" size={24} />,
-      skills: ['Git', 'GitHub', 'REST APIs', 'Postman', 'Metodologias Ágeis (Scrum/Kanban)', 'Trello']
+      skills: ['Git', 'GitHub', 'REST APIs', 'Postman', 'Metodologias Ágeis (Scrum/Kanban)', 'Azure DevOps']
     },
     {
       title: 'ERP & Dados',
@@ -83,9 +83,9 @@ export default function Skills() {
             <div className="p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
               <div className="flex items-center mb-3">
                 <Globe className="text-blue-400 mr-3" size={20} />
-                <h4 className="text-lg font-semibold text-slate-200">Tecnologia em Sistemas para Internet</h4>
+                <h4 className="text-lg font-semibold text-slate-200">Tecnologia de Sistemas para Internet</h4>
               </div>
-              <p className="text-slate-400">Senac EAD | Conclusão prevista: 10/2025</p>
+              <p className="text-slate-400">Senac | Concluído: 10/2025</p>
             </div>
             
             <div className="p-6 rounded-2xl bg-slate-800/50 border border-slate-700">

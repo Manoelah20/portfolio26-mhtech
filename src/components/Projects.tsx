@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Calendar, TrendingUp, Users, Clock, CheckCircle } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, Calendar, TrendingUp, Users, Clock, CheckCircle, X } from 'lucide-react';
+import SpotlightCard from './SpotlightCard';
 
 export default function Projects() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const projects = [
     {
       title: 'Invest Simple',
@@ -81,7 +84,8 @@ export default function Projects() {
       tags: ['React Native', 'Mobile', 'Pets', 'Gestão'],
       githubUrl: 'https://github.com/Manoelah20',
       liveUrl: 'https://example.com',
-      date: '2024'
+      date: '2024',
+      image: '/caonodiva.png'
     }
   ];
 
@@ -121,9 +125,9 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02 }}
-              className="group"
+              className="group h-full"
             >
-              <div className="glass-card overflow-hidden">
+              <SpotlightCard className="card-vercel overflow-hidden h-full flex flex-col">
                 {/* Header */}
                 <div className="p-8 border-b border-white/5">
                   <div className="flex items-start justify-between mb-4">
@@ -141,7 +145,7 @@ export default function Projects() {
                       </span>
                     </div>
                   </div>
-                  
+
                   {/* Challenge */}
                   <div className="mb-6">
                     <h4 className="text-cyan-400 font-semibold mb-2 flex items-center gap-2">
@@ -171,9 +175,9 @@ export default function Projects() {
 
                   {/* Metrics */}
                   <div className="grid grid-cols-3 gap-4 mb-6">
-                    <motion.div 
+                    <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="glass-card p-3"
+                      className="card-vercel p-3"
                     >
                       <div className="flex items-center gap-2 text-cyan-400 mb-1">
                         <Users size={14} />
@@ -181,9 +185,9 @@ export default function Projects() {
                       </div>
                       <p className="text-slate-200 font-semibold">{project.metrics.users}</p>
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="glass-card p-3"
+                      className="card-vercel p-3"
                     >
                       <div className="flex items-center gap-2 text-blue-400 mb-1">
                         <Clock size={14} />
@@ -191,9 +195,9 @@ export default function Projects() {
                       </div>
                       <p className="text-slate-200 font-semibold">{project.metrics.time}</p>
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="glass-card p-3"
+                      className="card-vercel p-3"
                     >
                       <div className="flex items-center gap-2 text-cyan-400 mb-1">
                         <TrendingUp size={14} />
@@ -226,22 +230,66 @@ export default function Projects() {
                       <Github size={16} />
                       <span className="text-sm">Código</span>
                     </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors group-hover:text-blue-400"
-                    >
-                      <ExternalLink size={16} />
-                      <span className="text-sm">Demo</span>
-                    </a>
+                    {project.image ? (
+                      <button
+                        onClick={() => setSelectedImage(project.image!)}
+                        className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors group-hover:text-blue-400"
+                      >
+                        <ExternalLink size={16} />
+                        <span className="text-sm">Demo</span>
+                      </button>
+                    ) : (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors group-hover:text-blue-400"
+                      >
+                        <ExternalLink size={16} />
+                        <span className="text-sm">Demo</span>
+                      </a>
+                    )}
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
       </motion.div>
+
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-4xl max-h-[90vh]"
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                aria-label="Fechar imagem"
+                className="absolute -top-12 right-0 text-white hover:text-cyan-400 transition-colors"
+              >
+                <X size={32} />
+              </button>
+              <img
+                src={selectedImage}
+                alt="Demo"
+                className="w-full h-full object-contain rounded-lg"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

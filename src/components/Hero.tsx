@@ -4,7 +4,7 @@ export default function Hero() {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const y2 = useTransform(scrollY, [0, 500], [0, -200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const opacity = useTransform(scrollY, [0, 900], [1, 0]);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20 pb-20 relative overflow-hidden">
@@ -84,16 +84,16 @@ export default function Hero() {
             <img 
               src="./mhpro.jpeg" 
               alt="Manoela Harrison - Desenvolvedora Full Stack (Foco em Front-end)"
-              className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white/10 shadow-2xl"
+              className="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl"
             />
           </div>
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
-          className="text-6xl md:text-8xl font-bold text-gradient mb-8 leading-tight neon-text"
+          className="text-5xl md:text-7xl font-bold text-gradient mb-8 leading-tight neon-text"
         >
           Manoela<br/>Harrison
         </motion.h1>
@@ -107,54 +107,56 @@ export default function Hero() {
           Da gestão de operações ao código: <span className="gradient-text-cyan font-bold text-2xl">mais de 20 anos de liderança</span> 
           <br />ao <span className="text-gradient font-bold text-2xl">desenvolvimento Full Stack (Foco em Front-end)</span> e QA.
         </motion.p>
-        
+
         {/* Seção de Conflito/Desafio com design ousado */}
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.7, type: "spring" }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          viewport={{ once: true, amount: 0.3 }}
           className="glass-card p-10 max-w-5xl mx-auto mb-12 neon-border"
         >
-          <motion.h3 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
             className="text-3xl font-bold gradient-text-cyan mb-8 neon-text"
           >
             O Desafio Real
           </motion.h3>
           <p className="text-slate-300 leading-relaxed mb-10 text-xl">
-            "Em 2023, enfrentei a decisão mais arriscada da minha carreira: deixar uma posição consolidada 
-            em gestão para entrar no mundo tech. Sem mentor formal e com recursos limitados, 
-            precisei aplicar 20 anos de experiência em liderança para aprender programação enquanto 
-            mantinha a responsabilidade financeira da minha família."
+         "Transicionei para o mundo tech unindo 20 anos de liderança em gestão ao desenvolvimento de software. Minha base profissional foi construída zelando pela saúde e qualidade de vida das pessoas, o que hoje reflete na minha disciplina, empatia e foco em acessibilidade (A11Y). Como Desenvolvedora, entrego soluções robustas com a visão estratégica de quem já orquestrou equipes complexas e entende que o equilíbrio e o cuidado são as chaves para um código de alta performance."
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ delay: 0.9, type: "spring" }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
               className="glass-card p-6 neon-border"
             >
               <h4 className="text-cyan-400 font-bold mb-3 text-xl">Transição de Carreira</h4>
               <p className="text-slate-400 text-sm leading-relaxed">Investimento próprio em formação tech enquanto gerenciava responsabilidades familiares e compromissos financeiros</p>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ delay: 1.0, type: "spring" }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
               className="glass-card p-6 neon-border"
             >
               <h4 className="text-purple-400 font-bold mb-3 text-xl">Decisão</h4>
               <p className="text-slate-400 text-sm leading-relaxed">Decisão baseada em minhas habilidades e análise de mercado. Escolhi o Full Stack (Foco em Front-end) com React e metodologias QA para garantir entregas de alta performance.</p>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ delay: 1.1, type: "spring" }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
               className="glass-card p-6 neon-border"
             >
               <h4 className="text-pink-400 font-bold mb-3 text-xl">Resultados</h4>

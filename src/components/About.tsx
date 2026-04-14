@@ -30,38 +30,34 @@ export default function About() {
     <div>
       <h3 className="text-2xl font-bold text-blue-400 mb-6 flex items-center gap-3">
         <Heart className="text-blue-400" size={28} />
-        O Porquê da Transição
+        A Decisão de Transformar
       </h3>
       <div className="space-y-6 text-slate-300 leading-relaxed text-justify">
         <p>
-          "Dediquei mais de uma década a gerir equipes e cuidar do bem-estar humano, unindo gestão operacional e nutrição. No entanto, diante de cada gargalo, uma inquietação se tornava inevitável: como eu poderia expandir esse impacto e transformar o cuidado em algo global?
-          Hoje, utilizo a tecnologia para construir as pontes que eu antes apenas imaginava. Minha missão é traduzir essa maturidade em código, criando interfaces que não apenas funcionam, mas que escalam soluções e geram valor real para as pessoas."
+         De Gestora a Desenvolvedora: Construindo Soluções com Propósito
         </p>
         <p>
-          Essa curiosidade me levou ao Desenvolvimento Front-end. Hoje, não gerencio apenas operações; 
-          eu construo a interface entre o problema e a solução. Unindo a visão estratégica de quem já liderou times 
-          à precisão técnica de tecnologias como <strong>React, Next.js e Mobile</strong>, entrego produtos 
-          pensados para o negócio e desenhados para o usuário.
+          A Transição: Após mais de uma década liderando equipes e cuidando do bem-estar humano na área de nutrição, decidi escalar meu impacto através da tecnologia. Em 2023, iniciei uma transição sólida via graduação em TI, unindo maturidade de liderança com inovação técnica.
         </p>
         <p>
-          Em 2023, investi em uma transição sólida através da graduação em Tecnologia da Informação. 
-          Com foco e disciplina, converti anos de experiência em gestão em uma base robusta para 
-          criar soluções digitais estruturadas e eficientes.
+          O Diferencial: Minha experiência prévia me permite enxergar além do código. Construo interfaces que são a ponte entre problemas complexos e soluções eficientes, sempre com foco em acessibilidade e valor real para o usuário.
         </p>
-        <p className="text-emerald-400 font-semibold">
-          Uno a maturidade de 10+ anos de liderança com a energia e inovação do desenvolvimento frontend para gerar valor real.
+        <p>
+          Stack Técnica: Especialista em ecossistemas modernos como React, Next.js, TypeScript e React Native, aplicando metodologias ágeis para garantir entregas estruturadas e de alta performance.
         </p>
       </div>
     </div>
 
     {/* Coluna da Direita: Cards de Destaque */}
-    <div className="space-y-6">
+    <div className="space-y-6 flex flex-col items-center">
       {/* Card: Propósito */}
       <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-600 hover:border-emerald-500/50 transition-colors">
-        <h4 className="text-lg font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-          <Target size={20} />
-          Meu Propósito
-        </h4>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+            <Target size={24} className="text-emerald-400" />
+          </div>
+          <h4 className="text-lg font-semibold text-emerald-400">Meu Propósito</h4>
+        </div>
         <p className="text-slate-300 text-sm">
           Criar interfaces que resolvam problemas reais de pessoas reais, traduzindo necessidades de negócio em soluções digitais eficazes.
         </p>
@@ -69,10 +65,12 @@ export default function About() {
 
       {/* Card: Comunidade */}
       <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-600 hover:border-blue-500/50 transition-colors">
-        <h4 className="text-lg font-semibold text-blue-400 mb-3 flex items-center gap-2">
-          <Users size={20} />
-          Comunidade
-        </h4>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+            <Users size={24} className="text-blue-400" />
+          </div>
+          <h4 className="text-lg font-semibold text-blue-400">Comunidade</h4>
+        </div>
         <p className="text-slate-300 text-sm">
           Ativa em ecossistemas tech focados em diversidade, apoiando especialmente mulheres acima de 30 anos em transição de carreira.
         </p>
@@ -80,10 +78,12 @@ export default function About() {
 
       {/* Card: Inovação */}
       <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-600 hover:border-red-500/50 transition-colors">
-        <h4 className="text-lg font-semibold text-red-400 mb-3 flex items-center gap-2">
-          <Cpu size={20} />
-          Inovação e Tecnologia
-        </h4>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
+            <Cpu size={24} className="text-red-400" />
+          </div>
+          <h4 className="text-lg font-semibold text-red-400">Inovação e Tecnologia</h4>
+        </div>
         <p className="text-slate-300 text-sm">
           Busca contínua pelas melhores práticas e ferramentas modernas para garantir produtos escaláveis e de alta performance.
         </p>
@@ -101,19 +101,19 @@ export default function About() {
           className="mb-16"
         >
           <h3 className="text-2xl font-bold text-slate-200 mb-8 text-center">Trajetória Profissional</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">10+</div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+            <div className="bg-slate-900/70 p-6 rounded-2xl border border-slate-700 text-center">
+              <div className="text-4xl font-bold text-cyan-400 mb-2">10+</div>
               <p className="text-slate-300 font-medium">Anos em Gestão</p>
               <p className="text-slate-400 text-sm mt-2">Liderança de equipes e operações</p>
             </div>
-            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 text-center">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">2+</div>
+            <div className="bg-slate-900/70 p-6 rounded-2xl border border-slate-700 text-center">
+              <div className="text-4xl font-bold text-purple-400 mb-2">2+</div>
               <p className="text-slate-300 font-medium">Anos em Desenvolvimento</p>
-              <p className="text-slate-400 text-sm mt-2">Frontend e QA focados em resultados</p>
+              <p className="text-slate-400 text-sm mt-2">Full-Stack com foco em Frontend e QA</p>
             </div>
-            <div className="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">15+</div>
+            <div className="bg-slate-900/70 p-6 rounded-2xl border border-slate-700 text-center">
+              <div className="text-4xl font-bold text-cyan-400 mb-2">15+</div>
               <p className="text-slate-300 font-medium">Projetos Concluídos</p>
               <p className="text-slate-400 text-sm mt-2">Desde MVPs até sistemas corporativos</p>
             </div>
@@ -129,14 +129,14 @@ export default function About() {
           className="mb-16"
         >
           <h3 className="text-2xl font-bold text-slate-200 mb-8 text-center">Fora do Código</h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 justify-items-center">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="text-blue-400" size={32} />
               </div>
               <h4 className="text-lg font-semibold text-slate-200 mb-2">Aprendizagem Contínua</h4>
               <p className="text-slate-400">
-                Leitura de livros técnicos, cursos online e participação em hackathons e bootcamps
+                Leitura de livros técnicos e participação em eventos, bootcamps e cursos
                 para manter-me atualizada com as melhores práticas do mercado.
               </p>
             </div>
@@ -147,8 +147,7 @@ export default function About() {
               </div>
               <h4 className="text-lg font-semibold text-slate-200 mb-2">Bem-estar e Equilíbrio</h4>
               <p className="text-slate-400">
-                Prática de atividade física como Jiu-jitsu, para me sentir mais leve e equilibrada no mínimo 3x por semana, musculação e caminhadas no fim de semana. 
-                Tempo de qualidade com a família. Acredito que mente saudável e equilibrada produz melhor código.
+               Mente sã, código eficiente: Manutenção de uma rotina ativa com Jiu-jitsu (3x/semana), musculação, beach tennis e caminhadas, priorizando o equilíbrio emocional e o tempo com a família como pilares para a produtividade técnica.
               </p>
             </div>
             
@@ -193,7 +192,7 @@ export default function About() {
             <GraduationCap className="text-blue-400" size={20} />
             <div>
               <p className="text-slate-200 font-medium">Formação</p>
-              <p className="text-slate-400 text-sm">Sistemas para Internet</p>
+              <p className="text-slate-400 text-sm">Tecnologia em Sistemas para Internet</p>
             </div>
           </div>
           
@@ -201,7 +200,7 @@ export default function About() {
             <User className="text-emerald-400" size={20} />
             <div>
               <p className="text-slate-200 font-medium">Experiência</p>
-              <p className="text-slate-400 text-sm">12+ anos profissionais</p>
+              <p className="text-slate-400 text-sm">20+ anos profissionais</p>
             </div>
           </div>
         </motion.div>
