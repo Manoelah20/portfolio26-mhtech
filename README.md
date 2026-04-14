@@ -34,8 +34,8 @@ portfolio/
 
 1. Clone o repositório:
 ```bash
-git clone <url-do-repositorio>
-cd portfolio
+git clone https://github.com/Manoelah20/portfolio26-mhtech.git
+cd portfolio26-mhtech
 ```
 
 2. Instale as dependências:
@@ -92,7 +92,7 @@ Os arquivos serão gerados na pasta `dist`.
 
 2. **Conecte o Repositório**
    - Clique em "Add New Project"
-   - Importe o repositório `portfolio-mh-26` do seu GitHub
+   - Importe o repositório `portfolio26-mhtech` do seu GitHub
    - O Vercel detectará automaticamente que é um projeto Vite
 
 3. **Configure o Deploy**
@@ -104,7 +104,7 @@ Os arquivos serão gerados na pasta `dist`.
    - Em alguns minutos seu site estará online
 
 5. **Domínio Gratuito**
-   - O Vercel fornecerá um domínio gratuito como: `seu-portfolio.vercel.app`
+   - O Vercel fornecerá um domínio gratuito como: `portfolio26-mhtech.vercel.app`
    - Você pode personalizar o domínio nas configurações do projeto
 
 ### Plano Gratuito do Vercel
