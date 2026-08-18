@@ -47,9 +47,9 @@ const projects: Project[] = [
       impact: 'MVP funcional',
     },
     tags: ['Vue.js 2', 'Node.js', 'JavaScript', 'MVP'],
-    date: '2024',
-    githubUrl: 'https://github.com/Manoelah20',
-    liveUrl: '#',
+date: '2024',
+    githubUrl: 'https://github.com/Manoelah20/Invest-Simple',
+    liveUrl: 'https://invest-simple-49q7.vercel.app',
   },
 
   {
@@ -76,7 +76,7 @@ const projects: Project[] = [
     ],
     date: '2024',
     githubUrl: 'https://github.com/Manoelah20/SkyCast',
-    liveUrl: '#',
+    liveUrl: 'https://skycastapp-xi.vercel.app',
   },
 
   {
@@ -101,8 +101,8 @@ const projects: Project[] = [
       'React Navigation',
     ],
     date: '2023',
-    githubUrl: 'https://github.com/Manoelah20',
-    liveUrl: '#',
+    githubUrl: 'https://github.com/Manoelah20/safeshield-mobile-App',
+   liveUrl: 'https://safeshield-mobile-app.vercel.app/',
   },
 
   {
@@ -127,8 +127,8 @@ const projects: Project[] = [
       'REST API',
     ],
     date: '2025',
-    githubUrl: 'https://github.com/Manoelah20',
-    liveUrl: '#',
+    githubUrl: 'https://github.com/Manoelah20/FinderBox',
+    liveUrl: 'https://finder-box.vercel.app',
   },
 ];
 
@@ -303,27 +303,15 @@ export default function Projects() {
                     <Github size={16} />
                     <span className="text-sm">Código</span>
                   </a>
-
-                  {project.image ? (
-                    <button
-                      type="button"
-                      onClick={() => setSelectedImage(project.image ?? null)}
-                      className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      <span className="text-sm">Demo</span>
-                    </button>
-                  ) : (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      <span className="text-sm">Demo</span>
-                    </a>
-                  )}
+<a
+  href={project.liveUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
+>
+  <ExternalLink size={16} />
+  <span className="text-sm">Demo</span>
+</a>
                 </div>
               </div>
             </SpotlightCard>
