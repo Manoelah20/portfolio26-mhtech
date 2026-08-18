@@ -83,8 +83,7 @@ export default function Hero() {
                     transition={{ duration: 0.6, delay: 0.5 }}
                     className="text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed font-light"
                 >
-                    Desenvolvo interfaces modernas, responsivas e acessíveis, com foco em
-                    experiência do usuário, qualidade de código e integração com APIs.
+                   Desenvolvedora Front-End focada em criar interfaces modernas, acessíveis e responsivas, utilizando React, Next.js e TypeScript, com atenção à experiência do usuário, qualidade de código e integração com APIs REST.
                 </motion.p>
 
                 <motion.div
