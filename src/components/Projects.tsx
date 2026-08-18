@@ -1,92 +1,139 @@
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Calendar, TrendingUp, Users, Clock, CheckCircle, X } from 'lucide-react';
+import {
+  ExternalLink,
+  Github,
+  Calendar,
+  TrendingUp,
+  Users,
+  Clock,
+  CheckCircle,
+  X,
+} from 'lucide-react';
 import SpotlightCard from './SpotlightCard';
+
+interface Project {
+  title: string;
+  challenge: string;
+  solution: string;
+  conflict: string;
+  result: string;
+  metrics: {
+    users: string;
+    time: string;
+    impact: string;
+  };
+  tags: string[];
+  date: string;
+  githubUrl: string;
+  liveUrl: string;
+  image?: string;
+}
 
 export default function Projects() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const projects = [
+
+  const projects: Project[] = [
     {
       title: 'Invest Simple',
-      challenge: 'Validar modelo de negócio em 30 dias com MVP funcional',
-      solution: 'Simulador financeiro desenvolvido com Vue.js 2 e Node.js, integrando cálculos complexos e visualização de dados em tempo real',
-      conflict: 'Prazo apertado e falta de experiência prévia com cálculos financeiros complexos',
-      result: 'MVP entregue em 28 dias, validando R$50k em investimentos potenciais',
+      challenge:
+        'Desenvolver uma interface para simulação e visualização de dados financeiros.',
+      solution:
+        'Aplicação desenvolvida com Vue.js 2 e Node.js, com implementação de cálculos e apresentação dos resultados em uma interface simples e responsiva.',
+      conflict:
+        'Trabalhar com regras de cálculo e transformar informações financeiras em uma experiência fácil de compreender.',
+      result:
+        'MVP funcional desenvolvido como projeto prático para aplicar conceitos de Front-End, integração com backend e manipulação de dados.',
       metrics: {
-        users: '150+',
-        time: '28 dias',
-        impact: 'R$50k validados'
+        users: 'Projeto pessoal',
+        time: '2024',
+        impact: 'MVP funcional',
       },
-      tags: ['Vue.js 2', 'Node.js', 'Financeiro', 'MVP'],
+      tags: ['Vue.js 2', 'Node.js', 'JavaScript', 'MVP'],
+      date: '2024',
       githubUrl: 'https://github.com/Manoelah20',
-      liveUrl: 'https://invest-simple-49q7.vercel.app/',
-      date: '2024'
+      liveUrl: '#',
     },
+
     {
       title: 'SkyCast Dashboard',
-      challenge: 'Dashboard meteorológico para tomada de decisão logística',
-      solution: 'Aplicação em React utilizando API OpenWeather com Dark Mode e alertas personalizados',
-      conflict: 'API externa com limitações de requisições e necessidade de cache inteligente',
-      result: 'Redução de 40% em decisões logísticas baseadas em clima adverso',
+      challenge:
+        'Criar um dashboard responsivo para consultar e visualizar informações meteorológicas.',
+      solution:
+        'Aplicação desenvolvida em React com integração à API OpenWeather, exibindo dados climáticos de forma organizada e adaptada a diferentes tamanhos de tela.',
+      conflict:
+        'Trabalhar com dados externos, estados de carregamento e tratamento de possíveis erros na comunicação com a API.',
+      result:
+        'Dashboard funcional desenvolvido para praticar integração com APIs REST, componentização, estados assíncronos e construção de interfaces responsivas.',
       metrics: {
-        users: '500+',
-        time: '15 dias',
-        impact: '40% redução de custos'
+        users: 'Projeto pessoal',
+        time: '2024',
+        impact: 'Dashboard funcional',
       },
-      tags: ['React', 'API OpenWeather', 'CSS Dinâmico', 'Dashboard'],
-      githubUrl: 'https://github.com/Manoelah20',
-      liveUrl: 'https://skycastapp-xi.vercel.app/',
-      date: '2024'
+      tags: [
+        'React',
+        'JavaScript',
+        'OpenWeather API',
+        'CSS',
+        'REST API',
+      ],
+      date: '2024',
+      githubUrl: 'https://github.com/Manoelah20/SkyCast',
+      liveUrl: '#',
     },
+
     {
       title: 'SafeShield Mobile',
-      challenge: 'Solução mobile para gestão de senhas corporativas',
-      solution: 'App mobile com React Native e Expo focado em segurança e usabilidade',
-      conflict: 'Requisitos de segurança corporativa vs experiência do usuário',
-      result: 'Adoção por 3 equipes com zero incidentes de segurança em 6 meses',
+      challenge:
+        'Desenvolver uma aplicação mobile para praticar autenticação, navegação e gerenciamento de informações.',
+      solution:
+        'Aplicação mobile desenvolvida com React Native e Expo, com foco em organização da interface, navegação entre telas e experiência do usuário.',
+      conflict:
+        'Adaptar a experiência de uma aplicação web para dispositivos móveis e organizar diferentes fluxos de navegação.',
+      result:
+        'Projeto prático utilizado para aprofundar conhecimentos em React Native, Expo, navegação e desenvolvimento mobile.',
       metrics: {
-        users: '3 equipes',
-        time: '21 dias',
-        impact: '0 incidentes segurança'
+        users: 'Projeto de estudo',
+        time: '2023',
+        impact: 'Aplicação funcional',
       },
-      tags: ['React Native', 'Expo', 'Mobile', 'Segurança'],
+      tags: [
+        'React Native',
+        'Expo',
+        'TypeScript',
+        'React Navigation',
+      ],
+      date: '2023',
       githubUrl: 'https://github.com/Manoelah20',
-      liveUrl: 'https://example.com',
-      date: '2023'
+      liveUrl: '#',
     },
+
     {
       title: 'FinderBox',
-      challenge: 'Criar plataforma de busca e comparação de produtos com interface intuitiva',
-      solution: 'Aplicação web com React e TailwindCSS, integrando API de produtos e filtros avançados',
-      conflict: 'Balancear performance com grande volume de dados e funcionalidades complexas',
-      result: 'Plataforma funcional com 100+ produtos indexados e busca em tempo real',
+      challenge:
+        'Criar uma interface de busca e comparação de produtos com navegação simples e filtros eficientes.',
+      solution:
+        'Aplicação web desenvolvida com React e Tailwind CSS, com componentes reutilizáveis, busca de produtos, filtros e integração com dados externos.',
+      conflict:
+        'Organizar diferentes estados da interface e manter uma experiência de navegação clara enquanto novas funcionalidades eram adicionadas.',
+      result:
+        'Projeto desenvolvido para praticar componentização, gerenciamento de estado, consumo de APIs e construção de interfaces responsivas.',
       metrics: {
-        users: '200+',
-        time: '30 dias',
-        impact: '100+ produtos'
+        users: 'Projeto pessoal',
+        time: '2025',
+        impact: 'Aplicação funcional',
       },
-      tags: ['React', 'TailwindCSS', 'API', 'Search'],
+      tags: [
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'REST API',
+      ],
+      date: '2025',
       githubUrl: 'https://github.com/Manoelah20',
-      liveUrl: 'https://finder-box.vercel.app/',
-      date: '2025'
+      liveUrl: '#',
     },
-    {
-      title: 'Meu Cão no Divã',
-      challenge: 'Criar aplicativo completo para gestão e cuidados de pets',
-      solution: 'App mobile com React Native para controle de vacinas, alimentação e consultas veterinárias',
-      conflict: 'Integração de múltiplas funcionalidades em interface simples e intuitiva',
-      result: 'Aplicativo funcional com 500+ downloads e avaliações positivas',
-      metrics: {
-        users: '500+',
-        time: '45 dias',
-        impact: '4.8★ avaliações'
-      },
-      tags: ['React Native', 'Mobile', 'Pets', 'Gestão'],
-      githubUrl: 'https://github.com/Manoelah20',
-      liveUrl: 'https://example.com',
-      date: '2024',
-      image: '/caonodiva.png'
-    }
   ];
 
   return (
@@ -95,86 +142,109 @@ export default function Projects() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.15 }}
       >
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
           <div>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl font-bold text-gradient mb-4"
             >
               Projetos
             </motion.h2>
+
             <p className="text-slate-400 text-lg max-w-2xl">
-              Projetos reais com desafios complexos, decisões sob pressão e resultados mensuráveis
+              Projetos práticos desenvolvidos para aplicar conhecimentos de
+              Front-End, explorar novas tecnologias e resolver problemas reais
+              de interface e experiência do usuário.
             </p>
           </div>
+
           <div className="flex items-center gap-2 text-slate-400">
             <Github size={20} />
             <span className="text-sm">GitHub</span>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.05,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
               whileHover={{ scale: 1.02 }}
               className="group h-full"
             >
               <SpotlightCard className="card-vercel overflow-hidden h-full flex flex-col">
-                {/* Header */}
                 <div className="p-8 border-b border-white/5">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-200 group-hover:text-gradient transition-all mb-2">
                         {project.title}
                       </h3>
+
                       <div className="flex items-center text-slate-500 text-sm mb-4">
                         <Calendar size={14} className="mr-1" />
                         {project.date}
                       </div>
-                      {/* QA Badge */}
+
                       <span className="qa-badge mb-4">
                         <CheckCircle size={12} /> QA & Tests Certified
                       </span>
                     </div>
                   </div>
 
-                  {/* Challenge */}
                   <div className="mb-6">
                     <h4 className="text-cyan-400 font-semibold mb-2 flex items-center gap-2">
                       <TrendingUp size={16} />
                       O Desafio
                     </h4>
-                    <p className="text-slate-300">{project.challenge}</p>
+
+                    <p className="text-slate-300">
+                      {project.challenge}
+                    </p>
                   </div>
 
-                  {/* Solution */}
                   <div className="mb-6">
-                    <h4 className="text-blue-400 font-semibold mb-2">A Solução</h4>
-                    <p className="text-slate-300">{project.solution}</p>
+                    <h4 className="text-blue-400 font-semibold mb-2">
+                      A Solução
+                    </h4>
+
+                    <p className="text-slate-300">
+                      {project.solution}
+                    </p>
                   </div>
 
-                  {/* Conflict */}
                   <div className="mb-6">
-                    <h4 className="text-purple-400 font-semibold mb-2">Conflito Enfrentado</h4>
-                    <p className="text-slate-300">{project.conflict}</p>
+                    <h4 className="text-purple-400 font-semibold mb-2">
+                      Conflito Enfrentado
+                    </h4>
+
+                    <p className="text-slate-300">
+                      {project.conflict}
+                    </p>
                   </div>
 
-                  {/* Result */}
                   <div className="mb-6">
-                    <h4 className="text-emerald-400 font-semibold mb-2">Resultado Concreto</h4>
-                    <p className="text-slate-300">{project.result}</p>
+                    <h4 className="text-emerald-400 font-semibold mb-2">
+                      Resultado Concreto
+                    </h4>
+
+                    <p className="text-slate-300">
+                      {project.result}
+                    </p>
                   </div>
 
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="card-vercel p-3"
@@ -183,8 +253,12 @@ export default function Projects() {
                         <Users size={14} />
                         <span className="text-xs">Usuários</span>
                       </div>
-                      <p className="text-slate-200 font-semibold">{project.metrics.users}</p>
+
+                      <p className="text-slate-200 font-semibold">
+                        {project.metrics.users}
+                      </p>
                     </motion.div>
+
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="card-vercel p-3"
@@ -193,8 +267,12 @@ export default function Projects() {
                         <Clock size={14} />
                         <span className="text-xs">Timeline</span>
                       </div>
-                      <p className="text-slate-200 font-semibold">{project.metrics.time}</p>
+
+                      <p className="text-slate-200 font-semibold">
+                        {project.metrics.time}
+                      </p>
                     </motion.div>
+
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="card-vercel p-3"
@@ -203,23 +281,24 @@ export default function Projects() {
                         <TrendingUp size={14} />
                         <span className="text-xs">Impacto</span>
                       </div>
-                      <p className="text-slate-200 font-semibold">{project.metrics.impact}</p>
+
+                      <p className="text-slate-200 font-semibold">
+                        {project.metrics.impact}
+                      </p>
                     </motion.div>
                   </div>
-                  
-                  {/* Tags */}
+
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, tagIndex) => (
+                    {project.tags.map((tag) => (
                       <span
-                        key={tagIndex}
+                        key={tag}
                         className="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-400 border border-cyan-500/20 hover:border-cyan-500/40 transition-all"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  
-                  {/* Links */}
+
                   <div className="flex gap-4">
                     <a
                       href={project.githubUrl}
@@ -230,9 +309,13 @@ export default function Projects() {
                       <Github size={16} />
                       <span className="text-sm">Código</span>
                     </a>
+
                     {project.image ? (
                       <button
-                        onClick={() => setSelectedImage(project.image!)}
+                        type="button"
+                        onClick={() =>
+                          setSelectedImage(project.image ?? null)
+                        }
                         className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors group-hover:text-blue-400"
                       >
                         <ExternalLink size={16} />
@@ -257,7 +340,6 @@ export default function Projects() {
         </div>
       </motion.div>
 
-      {/* Image Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -271,16 +353,18 @@ export default function Projects() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(event) => event.stopPropagation()}
               className="relative max-w-4xl max-h-[90vh]"
             >
               <button
+                type="button"
                 onClick={() => setSelectedImage(null)}
                 aria-label="Fechar imagem"
                 className="absolute -top-12 right-0 text-white hover:text-cyan-400 transition-colors"
               >
                 <X size={32} />
               </button>
+
               <img
                 src={selectedImage}
                 alt="Demo"
@@ -293,3 +377,4 @@ export default function Projects() {
     </section>
   );
 }
+

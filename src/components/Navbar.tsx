@@ -1,5 +1,31 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+
+const navLinks = [
+  { href: '#home', label: 'Início' },
+  { href: '#about', label: 'Sobre' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projetos' },
+  { href: '#contact', label: 'Contato' },
+];
+
+const socialLinks = [
+  {
+    href: 'https://github.com/Manoelah20',
+    label: 'GitHub',
+    icon: Github,
+  },
+  {
+    href: 'https://linkedin.com/in/manoelaharrison',
+    label: 'LinkedIn',
+    icon: Linkedin,
+  },
+  {
+    href: 'mailto:harrisonmanoela@gmail.com',
+    label: 'E-mail',
+    icon: Mail,
+  },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,126 +33,122 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 24);
     };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '#home', label: 'Início' },
-    { href: '#about', label: 'Sobre' },
-    { href: '#skills', label: 'Competências' },
-    { href: '#projects', label: 'Projetos' },
-    { href: '#contact', label: 'Contato' },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'bg-slate-900/80 backdrop-blur-xl border-b border-white/5 shadow-lg' 
-        : 'bg-transparent'
-    }`}>
+    <nav
+      aria-label="Navegação principal"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+          ? 'bg-slate-950/90 backdrop-blur-xl border-b border-white/10 shadow-lg'
+          : 'bg-slate-950/30 backdrop-blur-sm'
+        }`}
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0">
-            <h1 className="text-3xl font-bold text-gradient">
-              MH
-            </h1>
+          {/* Brand */}
+          <a
+            href="#home"
+            onClick={closeMenu}
+            aria-label="Manoela Harrison — voltar ao início"
+            className="text-2xl md:text-3xl font-bold text-gradient focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
+          >
+            MH
+          </a>
+
+          {/* Desktop navigation */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-slate-300 hover:text-cyan-300 px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-2">
+          {/* Desktop social links */}
+          <div className="hidden md:flex items-center gap-1">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                className="text-slate-400 hover:text-cyan-300 p-2.5 rounded-lg transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                aria-label={label}
+              >
+                <Icon size={19} />
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="md:hidden text-slate-300 hover:text-cyan-300 p-2 rounded-lg transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile navigation */}
+      {isOpen && (
+        <div
+          id="mobile-navigation"
+          className="md:hidden mx-4 mt-2 mb-4 rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-white/10 shadow-2xl"
+        >
+          <div className="px-4 py-4">
+            <div className="space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-slate-300 hover:text-cyan-400 px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-white/5 rounded-lg"
+                  onClick={closeMenu}
+                  className="text-slate-300 hover:text-cyan-300 block px-4 py-3 text-base font-medium transition-colors rounded-xl hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
-          </div>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <a 
-              href="https://github.com/Manoelah20" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-slate-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:bg-white/5 p-2 rounded-lg" 
-              aria-label="GitHub"
-            >
-              <Github size={20} />
-            </a>
-            <a 
-              href="https://linkedin.com/in/manoelaharrison" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-slate-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:bg-white/5 p-2 rounded-lg" 
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a 
-              href="mailto:harrisonmanoela@gmail.com" 
-              className="text-slate-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:bg-white/5 p-2 rounded-lg" 
-              aria-label="Email"
-            >
-              <Mail size={20} />
-            </a>
-          </div>
-
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-cyan-400 focus:outline-none transition-colors p-2 hover:bg-white/5 rounded-lg"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {isOpen && (
-        <div className="md:hidden glass-card border-t border-white/5 mx-4 mt-2 rounded-2xl">
-          <div className="px-4 pt-4 pb-6 space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-slate-300 hover:text-cyan-400 block px-4 py-3 text-base font-medium transition-all duration-300 hover:bg-white/5 rounded-xl"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="flex items-center space-x-4 px-4 py-4 pt-6 border-t border-white/5">
-              <a 
-                href="https://github.com/Manoelah20" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-slate-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:bg-white/5 p-3 rounded-xl" 
-                aria-label="GitHub"
-              >
-                <Github size={24} />
-              </a>
-              <a 
-                href="https://linkedin.com/in/manoelaharrison" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-slate-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:bg-white/5 p-3 rounded-xl" 
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a 
-                href="mailto:harrisonmanoela@gmail.com" 
-                className="text-slate-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:bg-white/5 p-3 rounded-xl" 
-                aria-label="Email"
-              >
-                <Mail size={24} />
-              </a>
+            <div className="flex items-center gap-2 px-4 pt-4 mt-3 border-t border-white/10">
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                  onClick={closeMenu}
+                  className="text-slate-400 hover:text-cyan-300 p-3 rounded-xl transition-colors hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                  aria-label={label}
+                >
+                  <Icon size={22} />
+                </a>
+              ))}
             </div>
           </div>
         </div>

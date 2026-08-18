@@ -9,8 +9,9 @@ import FloatingContact from './components/FloatingContact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-200 selection:bg-cyan-500/30">
+    <div className="min-h-screen bg-[#020617] text-slate-200 selection:bg-cyan-500/30 selection:text-white">
       <Navbar />
+
       <main>
         <Hero />
         <About />
@@ -18,6 +19,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
+
       <Footer />
       <FloatingContact />
     </div>
