@@ -26,7 +26,7 @@ interface Project {
   tags: string[];
   date: string;
   githubUrl: string;
-  liveUrl: string;
+  liveUrl?: string;
   image?: string;
 }
 
@@ -47,7 +47,7 @@ const projects: Project[] = [
       impact: 'MVP funcional',
     },
     tags: ['Vue.js 2', 'Node.js', 'JavaScript', 'MVP'],
-date: '2024',
+    date: '2024',
     githubUrl: 'https://github.com/Manoelah20/Invest-Simple',
     liveUrl: 'https://invest-simple-49q7.vercel.app',
   },
@@ -102,7 +102,7 @@ date: '2024',
     ],
     date: '2023',
     githubUrl: 'https://github.com/Manoelah20/safeshield-mobile-App',
-   liveUrl: 'https://safeshield-mobile-app.vercel.app/',
+    liveUrl: 'https://safeshield-mobile-app.vercel.app/',
   },
 
   {
@@ -129,6 +129,30 @@ date: '2024',
     date: '2025',
     githubUrl: 'https://github.com/Manoelah20/FinderBox',
     liveUrl: 'https://finder-box.vercel.app',
+  },
+  {
+    title: 'DevBoard',
+    challenge:
+      'Criar um dashboard responsivo para organizar, acompanhar e gerenciar projetos em uma interface centralizada.',
+    solution:
+      'Aplicação desenvolvida com Next.js, React, TypeScript e Tailwind CSS, utilizando componentes reutilizáveis, rotas dinâmicas e gerenciamento de projetos.',
+    conflict:
+      'Organizar o ciclo completo de gerenciamento de projetos, mantendo uma experiência simples e consistente entre desktop e dispositivos móveis.',
+    result:
+      'Dashboard funcional com criação, edição e exclusão de projetos, acompanhamento de progresso, gerenciamento de status, página de detalhes, ações rápidas e suporte a tema claro e escuro.',
+    metrics: {
+      users: 'Projeto pessoal',
+      time: '2026',
+      impact: 'CRUD funcional',
+    },
+    tags: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+    ],
+    date: '2026',
+    githubUrl: 'https://github.com/Manoelah20/DevBoard',
   },
 ];
 
@@ -294,6 +318,17 @@ export default function Projects() {
 
                 {/* Links */}
                 <div className="flex flex-wrap gap-4">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
+                    >
+                      <ExternalLink size={16} />
+                      <span className="text-sm">Demo</span>
+                    </a>
+                  )}
                   <a
                     href={project.githubUrl}
                     target="_blank"
@@ -303,15 +338,6 @@ export default function Projects() {
                     <Github size={16} />
                     <span className="text-sm">Código</span>
                   </a>
-<a
-  href={project.liveUrl}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
->
-  <ExternalLink size={16} />
-  <span className="text-sm">Demo</span>
-</a>
                 </div>
               </div>
             </SpotlightCard>
