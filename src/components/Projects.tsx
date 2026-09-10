@@ -154,6 +154,63 @@ const projects: Project[] = [
     date: '2026',
     githubUrl: 'https://github.com/Manoelah20/DevBoard',
   },
+
+  {
+    title: 'JobInbox',
+    challenge:
+      'Criar um gerenciador de oportunidades de emprego, cursos e vagas com automação de análise de e-mails e extração de dados.',
+    solution:
+      'Aplicação Angular 21 com Signals, zoneless change detection e standalone components. Design system próprio com CSS custom properties, PWA offline-first com Service Worker, 129 testes com Vitest, CI/CD via GitHub Actions.',
+    conflict:
+      'Adotar Angular moderno (Signals, zoneless), criar design system sem dependências externas, implementar PWA, extração automática de dados de e-mails e garantir cobertura de testes abrangente.',
+    result:
+      'CRUD completo de oportunidades com filtros e export JSON/CSV, Inbox com análise de e-mails e criação automática de vagas, Dashboard com métricas em tempo real, importação em lote, status badges padronizados. 129 testes passando.',
+    metrics: {
+      users: 'Projeto pessoal',
+      time: '2026',
+      impact: '129 testes, PWA, CI/CD',
+    },
+    tags: [
+      'Angular 21',
+      'Signals',
+      'TypeScript',
+      'Vitest',
+      'PWA',
+      'CSS Custom Properties',
+      'GitHub Actions',
+    ],
+    date: '2026',
+    githubUrl: 'https://github.com/Manoelah20/JobinBox',
+    liveUrl: 'https://jobin-box.vercel.app',
+  },
+  {
+    title: 'Accessibility Lab',
+    challenge:
+      'Criar uma ferramenta para auditar aplicações web e identificar problemas de acessibilidade de forma objetiva.',
+    solution:
+      'Aplicação desenvolvida com Next.js, React e TypeScript, integrando Playwright e axe-core para executar auditorias automatizadas e organizar os resultados por impacto, categoria e critérios WCAG.',
+    conflict:
+      'Executar a auditoria em páginas externas com segurança, lidar com diferentes estados da análise e transformar os resultados técnicos em informações úteis para tomada de decisão.',
+    result:
+      'Auditoria automatizada de aplicações web acessíveis por URL pública, com detalhamento das violações, orientações de correção, filtros, score, exportação em JSON e Markdown e cobertura de testes automatizados.',
+    metrics: {
+      users: 'Projeto pessoal',
+      time: '2026',
+      impact: '30 testes automatizados',
+    },
+    tags: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Playwright',
+      'axe-core',
+      'WCAG',
+      'A11Y',
+    ],
+    date: '2026',
+    githubUrl: 'https://github.com/Manoelah20/accessibility-lab',
+    liveUrl: 'https://accessibility-lab-orcin.vercel.app',
+  },
 ];
 
 export default function Projects() {
