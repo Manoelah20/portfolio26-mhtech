@@ -59,6 +59,7 @@ const projects: Project[] = [
     date: '2026',
     githubUrl: 'https://github.com/Manoelah20/Desafio-Arremate-MH',
     liveUrl: 'https://desafio-arremate-mh.vercel.app/',
+    image: '/images/arremate-mh.png',
   },
 
   {
@@ -317,7 +318,18 @@ export default function Projects() {
             className="h-full"
           >
             <SpotlightCard className="card-vercel overflow-hidden h-full">
-              <div className="p-5 sm:p-8">
+            {project.image && (
+  <div className="w-full flex justify-center items-center bg-slate-950 p-3">
+    <img
+      src={project.image}
+      alt={`Captura de tela do projeto ${project.title}`}
+      className="w-full max-h-72 object-contain object-center rounded-lg"
+      loading="lazy"
+    />
+  </div>
+)}
+
+<div className="p-5 sm:p-8">
                 {/* Título */}
                 <div className="mb-6">
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-200 mb-2">
