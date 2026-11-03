@@ -31,6 +31,36 @@ interface Project {
 }
 
 const projects: Project[] = [
+  
+  {
+    title: 'Arremate MH — Casa de Leilões Online',
+    challenge:
+      'Desenvolver uma aplicação web de leilões online com dois perfis de usuários: leiloeiro e licitante, utilizando dados de uma API.',
+    solution:
+      'Aplicação desenvolvida com React, TypeScript e Vite, com integração a uma API para disponibilizar os dados dos itens e as funcionalidades da experiência de leilão.',
+    conflict:
+      'Organizar os fluxos de navegação dos diferentes perfis e integrar os dados da API à interface, mantendo uma experiência clara e responsiva.',
+    result:
+      'Aplicação web publicada na Vercel, desenvolvida como desafio técnico para praticar integração entre Front-end e Back-end e construção de uma experiência de leilão online.',
+    metrics: {
+      users: 'Dois perfis',
+      time: '2026',
+      impact: 'Aplicação publicada',
+    },
+    tags: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'JavaScript',
+      'API REST',
+      'Node.js',
+      'Express',
+    ],
+    date: '2026',
+    githubUrl: 'https://github.com/Manoelah20/Desafio-Arremate-MH',
+    liveUrl: 'https://desafio-arremate-mh.vercel.app/',
+  },
+
   {
     title: 'Invest Simple',
     challenge:
@@ -210,6 +240,31 @@ const projects: Project[] = [
     date: '2026',
     githubUrl: 'https://github.com/Manoelah20/accessibility-lab',
     liveUrl: 'https://accessibility-lab-orcin.vercel.app',
+  },
+  {
+    title: 'Support Desk Lite',
+    challenge:
+      'Criar uma central de chamados que permita visualizar, pesquisar e organizar solicitações de suporte em uma interface clara.',
+    solution:
+      'Dashboard desenvolvido com Next.js, React, TypeScript e Tailwind CSS, com componentes reutilizáveis, indicadores gerais, busca textual e filtros combinados por status e prioridade.',
+    conflict:
+      'Manter os resultados da busca consistentes ao combinar filtros e permitir que a pesquisa encontre termos mesmo quando digitados sem acentos.',
+    result:
+      'Central de chamados com oito registros de demonstração, indicadores de resumo, filtros funcionais e visualização dos detalhes de cada chamado.',
+    metrics: {
+      users: 'Projeto pessoal',
+      time: '2026',
+      impact: 'Busca e filtros funcionais',
+    },
+    tags: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+    ],
+    date: '2026',
+    githubUrl: 'https://github.com/Manoelah20/support-desk-lite',
+    liveUrl: 'https://support-desk-lite-chi.vercel.app/',
   },
 ];
 
